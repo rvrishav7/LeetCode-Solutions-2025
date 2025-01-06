@@ -1,7 +1,7 @@
 #define ll long long int
 class Solution {
 public:
-    unordered_map<ll,bool>mp;
+    unordered_map<int,bool>mp;
     bool queryString(string s, int n) {
         int N=s.length(),num=0;
         mp.clear();
