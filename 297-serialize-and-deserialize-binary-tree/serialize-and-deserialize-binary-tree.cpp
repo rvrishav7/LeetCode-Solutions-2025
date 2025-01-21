@@ -14,7 +14,9 @@ public:
             s.push_back('N');
             return;
         }
-        s+=(to_string(root->val));
+        string t=(to_string(root->val));
+        for(auto &x: t)
+            s.push_back(x);
         s.push_back(' ');
         serialise_helper(root->left,s);
         serialise_helper(root->right,s);
