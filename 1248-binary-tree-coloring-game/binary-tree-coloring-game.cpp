@@ -23,7 +23,6 @@ public:
         return left+right+1;
     }
     bool btreeGameWinningMove(TreeNode* root, int n, int x) {
-        int left=0,right=0,parent=0;
         vector<int>temp(3);
         dfs(root,x,temp[0],temp[1]);
         temp[2]=n-(temp[0]+temp[1]+1);
