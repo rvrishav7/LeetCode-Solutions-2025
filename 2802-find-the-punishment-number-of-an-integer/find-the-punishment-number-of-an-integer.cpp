@@ -11,7 +11,6 @@ public:
         int ans=0;
         for(int i=1;i<=n;i++){
             string s=to_string(i*i);
-            cout<<s<<endl;
             if(fun(s,i,0,0))
                 ans+=(i*i);
         }
