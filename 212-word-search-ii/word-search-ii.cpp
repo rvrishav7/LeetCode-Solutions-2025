@@ -1,6 +1,12 @@
+#define N 26
 typedef struct node{
     bool end=false;
-    unordered_map<char,node*>child;
+    vector<node *>child;
+    node(){
+        vector<node *>ar(N);
+        child=ar;
+        end=false;
+    }
 }node;
 class Solution {
 public:
@@ -9,10 +15,10 @@ public:
             root->end=true;
             return;
         }
-        node *temp = root->child[s[p]];
+        node *temp = root->child[s[p]-'a'];
         if(temp==NULL){
             temp =new node;
-            root->child[s[p]]=temp;
+            root->child[s[p]-'a']=temp;
         }
         insert(s,temp,p+1);
     }
@@ -34,7 +40,7 @@ public:
         s.push_back(board[x][y]);
         bool res=false;
         for(int i=0;i<4;i++)
-            res=fun(board,root->child[board[x][y]],visited,s,x+xcor[i],y+ycor[i]);
+            res=fun(board,root->child[board[x][y]-'a'],visited,s,x+xcor[i],y+ycor[i]);
         visited[x][y]=false;
         s.pop_back();
         return res;
