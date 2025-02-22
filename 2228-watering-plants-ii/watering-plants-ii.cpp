@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int waterPlant(int plant, int &curr, int &cap){
+    inline int waterPlant(int &plant, int &curr, int &cap){
         if(curr>=plant){
             curr-=plant;
             return 0;
