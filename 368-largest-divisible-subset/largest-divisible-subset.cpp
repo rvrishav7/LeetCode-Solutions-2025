@@ -4,7 +4,7 @@ public:
         int n=nums.size(),maxi=0,idx=-1;
         sort(nums.begin(),nums.end());
         vector<pair<int,int>>dp(n);
-        
+        vector<int>ans;
         for(int i=0;i<n;i++){
             dp[i]={1,i};
             for(int j=0;j<i;j++){
@@ -20,13 +20,11 @@ public:
                 idx=i;
             }
         }
-        vector<int>ans(maxi);
-
         while(idx!=dp[idx].second){
-            ans[--maxi]=(nums[idx]);
+            ans.push_back(nums[idx]);
             idx=dp[idx].second;
         }
-        ans[--maxi]=(nums[idx]);
+        ans.push_back(nums[idx]);
         return ans;
     }
 };
