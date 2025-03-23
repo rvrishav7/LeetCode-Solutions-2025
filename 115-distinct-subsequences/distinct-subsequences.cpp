@@ -12,7 +12,7 @@ int fun(string &s, string &t, int n1, int n2){
         return dp[n1][n2]=fun(s,t,n1-1,n2);
     return dp[n1][n2]=fun(s,t,n1-1,n2)+fun(s,t,n1-1,n2-1);
 }
-    int numDistinct(string s, string t) {
+    int numDistinct(string &s, string &t) {
         memset(dp,-1,sizeof(dp));
         return fun(s,t,s.length()-1, t.length()-1);
     }
