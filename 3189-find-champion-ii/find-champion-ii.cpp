@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int findChampion(int n, vector<vector<int>>& edges) {
+    int findChampion(int &n, vector<vector<int>>& edges) {
         int idx=-1,count=0;
         vector<int>indegree(n,0);
         for(auto &x: edges)
