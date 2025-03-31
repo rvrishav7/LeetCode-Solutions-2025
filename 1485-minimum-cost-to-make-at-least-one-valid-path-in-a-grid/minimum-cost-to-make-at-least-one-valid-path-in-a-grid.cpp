@@ -6,24 +6,6 @@ public:
     const int xcor[5]={0,0,0,1,-1};
     const int ycor[5]={0,1,-1,0,0};
     int n,m,x,y,dist,temp;
-    ll fun(vector<vector<int>>& grid, vector<vector<bool>>&visited, int x, int y){
-        if(x<0||y<0||x>=n||y>=m ||visited[x][y])
-            return INT_MAX-1;
-        if(x==n-1&&y==m-1)
-            return 0;
-        if(dp[x][y]!=-1)
-            return dp[x][y];
-        ll ans=INT_MAX,temp=0;
-        visited[x][y]=true;
-        for(int i=1;i<=4;i++){
-            temp=1;
-            if(grid[x][y]==i)
-                temp=0;
-            ans=min(ans,temp+fun(grid,visited,x+xcor[i],y+ycor[i]));
-        }
-        visited[x][y]=false;
-        return dp[x][y]=ans;
-    }
     int minCost(vector<vector<int>>& grid) {
         n=grid.size();
         m=grid[0].size();
