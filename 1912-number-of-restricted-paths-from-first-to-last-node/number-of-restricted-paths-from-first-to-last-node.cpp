@@ -34,7 +34,7 @@ public:
             if(ar[p]<dis)
                 count=((count%MOD)+(resPaths(gr,ar,dp,p,n)%MOD))%MOD;
         }
-        return dp[s]=count%MOD;
+        return dp[s]=count;
     }
     int countRestrictedPaths(int n, vector<vector<int>>& edges) {
         vector<vector<pair<long long int,long long int>>>gr(n+1);
