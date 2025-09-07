@@ -10,18 +10,19 @@ public:
             minusOne=(digit-1+10)%10;
             temp=curr;
             temp[i]=plusOne+'0';
-            if(!mp[temp])
+            if(!mp[temp]&&!visited[temp])
                 q.push({temp,d+1});
 
             temp=curr;
             temp[i]=minusOne+'0';
-            if(!mp[temp])
+            if(!mp[temp]&&!visited[temp])
                 q.push({temp,d+1});
         }
     }
     int openLock(vector<string>& deadends, string target) {
         int dis,ans=INT_MAX;
         mp.clear();
+        visited.clear();
         for(auto &x: deadends)
             mp[x]=true;
         string curr="0000";
