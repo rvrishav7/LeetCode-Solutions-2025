@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int climbStairs(int n, vector<int>& costs) {
+    int climbStairs(int &n, vector<int>& costs) {
         vector<int>temp(n+1);
         for(int i=0;i<n;i++){
             int j=i+1,ans=INT_MAX;
