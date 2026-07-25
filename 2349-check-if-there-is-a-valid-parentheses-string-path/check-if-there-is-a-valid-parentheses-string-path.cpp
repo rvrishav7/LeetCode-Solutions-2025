@@ -1,4 +1,4 @@
-short dp[101][101][1001];
+short dp[101][101][205];
 class Solution {
 public:
     const int xcor[2]={0,1};
