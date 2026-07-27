@@ -1,9 +1,9 @@
 class Solution {
 public:
     long long countBadPairs(vector<int>& nums) {
-        long long goodCount=0,totaPair,n,ans=0;
-        n=nums.size();
-        unordered_map<long long,long long>mp;
+        long long ans=0;
+        int n=nums.size();
+        unordered_map<int,int>mp;
         for(int i=0;i<nums.size();i++)
             mp[nums[i]-i]++;
         for(auto &x: mp){
