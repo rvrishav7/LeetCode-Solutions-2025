@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool fun(string &word, string &pref){
+    inline bool fun(string &word, string &pref){
         int i=0;
         while(i<pref.length()&&i<word.length()){
             if(word[i]!=pref[i])
