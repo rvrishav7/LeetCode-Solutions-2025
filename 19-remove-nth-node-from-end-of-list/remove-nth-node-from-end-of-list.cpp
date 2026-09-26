@@ -16,7 +16,7 @@ ListNode* dfs(ListNode *root, int &n){
     ListNode *f = dfs(root->next,n);
     root->next=f;
     n--;
-    cout<<root->val<<" "<<n<<endl;
+    // cout<<root->val<<" "<<n<<endl;
     if(n==0)
         return root->next;
     return root;
