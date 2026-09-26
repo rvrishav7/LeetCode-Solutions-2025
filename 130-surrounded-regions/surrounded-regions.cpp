@@ -1,7 +1,7 @@
 class Solution {
 public:
-    int xcor[4]={1,-1,0,0};
-    int ycor[4]={0,0,1,-1};
+    const int xcor[4]={1,-1,0,0};
+    const int ycor[4]={0,0,1,-1};
     int n,m,f=1;
     void canSurround(vector<vector<char>>& grid,vector<vector<int>>&visited,int x, int y){
         if(x==n-1||x==0||y==0||y==m-1)
@@ -21,7 +21,7 @@ public:
                 
         }
     }
-    bool Surround(vector<vector<char>>& grid,vector<vector<int>>&visited,int x, int y){
+    void Surround(vector<vector<char>>& grid,vector<vector<int>>&visited,int x, int y){
         visited[x][y]=1;
         grid[x][y]='X';
         for(int i=0;i<4;i++){
@@ -30,8 +30,6 @@ public:
             if(grid[x+xcor[i]][y+ycor[i]] == 'O' )
                 Surround(grid,visited,x+xcor[i],y+ycor[i]);
         }
-        
-        return true;
     }
     void solve(vector<vector<char>>& grid) {
         n=grid.size();
