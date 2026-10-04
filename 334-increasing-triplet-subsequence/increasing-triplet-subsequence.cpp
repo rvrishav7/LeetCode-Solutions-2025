@@ -8,6 +8,8 @@ public:
                 *p=x;
             else
                 temp.push_back(x);
+            if(temp.size()==3)
+                return true;
         }
         return temp.size()>=3;
     }
